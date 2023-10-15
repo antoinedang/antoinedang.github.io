@@ -1,62 +1,551 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Your Name - Resume</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Antoine Dangeard">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=PT+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Antoine Dangeard Resume</title>
 </head>
-<body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Web Developer</p>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact/Links</a></li>
-            <li><a href="#extracurricular">Extra-Curricular</a></li>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="100">
+
+  <div class="lines-wrap">
+    <div class="lines-inner">
+      <div class="lines"></div>
+    </div>
+  </div>
+  <!-- END lines -->
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+  
+  <nav class="site-nav dark mb-5 site-navbar-target">
+    <div class="container">
+      <div class="site-navigation">
+        <a href="index.html" class="logo m-0">My Resume<span class="text-primary">.</span></a>
+
+        <ul class="js-clone-nav d-none d-lg-inline-none site-menu float-right site-nav-wrap">
+          <li><a href="#home-section" class="nav-link active">About Me</a></li>
+          <li><a href="#skills-section" class="nav-link">Skills</a></li>
+          <li><a href="#experience-section" class="nav-link">Experience</a></li>
+          <li><a href="#education-section" class="nav-link">Education</a></li>
+          <li><a href="#projects-section" class="nav-link">Projects</a></li>
+          <li><a href="#awards-section" class="nav-link">Awards</a></li>
+          <li><a href="#contact-section" class="nav-link">Contact</a></li>
         </ul>
-    </nav>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <!-- Add your experience details here -->
-    </section>
+        <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-inline-block" data-toggle="collapse" data-target="#main-navbar">
+          <span></span>
+        </a>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <!-- Add your skills here -->
-    </section>
+      </div>
+    </div>
+  </nav>
 
-    <section id="awards">
-        <h2>Awards</h2>
-        <!-- Add your awards here -->
-    </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <!-- Add information about yourself here -->
-    </section>
 
-    <section id="contact">
-        <h2>Contact/Links</h2>
-        <!-- Add your contact information and links here -->
-    </section>
+  <div class="major-section pb-0" id="home-section">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-md-7">
+          <h1 class="heading gsap-reveal-hero mb-3"><strong>Antoine <span class="text-primary">Dangeard</span></strong></h1>
+          <h2 class="subheading gsap-reveal-hero mb-4">
+            French-American Software Engineering student with a passion for robotics and A.I. <br>
+          </h2>
+          <p class="gsap-reveal-hero"><a href="https://docs.google.com/drawings/d/1aAN-h7h6rR4xlj7wwu-HtrhYfHnRlpcvaWQKWYqTDjM/edit?usp=sharing" target="_blank" class="btn btn-outline-black">Resume Document</a></p>    
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
-    <section id="extracurricular">
-        <h2>Extra-Curricular</h2>
-        <!-- Add your extra-curricular activities here -->
-    </section>
+    <div class="major-section pb-0" id="about-section">
+      <div class="container">
+        <div class="row justify-content-center mb-3">
+          <div class="col-lg-7 mx-auto text-center author-wrap">
+            <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded-circle mb-3">
+            <h3 class="text-black h5 font-weight-bold mb-2 gsap-reveal-hero">James Williardson</h3>
+            <p class="gsap-reveal-hero">Product Designer and Developer</p>
+          </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2023 Your Name</p>
-    </footer>
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
 
-    <script src="script.js"></script>
-</body>
-</html>
+            <p class="gsap-reveal-hero">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+
+            <p class="gsap-reveal-hero">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+            <p class="gsap-reveal-hero">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+
+            <p class="gsap-reveal-hero">The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
+
+            <p class="gsap-reveal-hero mb-5">When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="major-section pb-0" id="experience-section">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-7 text-center mx-auto">
+            <h2 class="section-heading gsap-reveal-hero mb-0"><strong>Experience</strong></h2>
+            <p class="gsap-reveal-hero">The Big Oxmox advised her not to do so, because there were thousands of bad Commas.</p>
+            <div class="wave gsap-reveal-hero" >
+              <svg>
+                <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4 mb-4">
+            <div class="service text-center">
+              <div class="gsap-reveal-hero mb-3">
+                <span class="icon-service"><img src="images/svg/service-icon-7.svg" alt="Image" class="img-fluid"></span>
+              </div>
+              <h3 class="gsap-reveal-hero">Marketing</h3>
+              <p class="gsap-reveal-hero">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4 mb-4">
+            <div class="service text-center">
+              <div class="gsap-reveal-hero mb-3">
+                <span class="icon-service"><img src="images/svg/service-icon-6.svg" alt="Image" class="img-fluid"></span>
+              </div>
+              <h3 class="gsap-reveal-hero">Photography</h3>
+              <p class="gsap-reveal-hero">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4 mb-4">
+            <div class="service text-center">
+              <div class="gsap-reveal-hero mb-3">
+                <span class="icon-service"><img src="images/svg/service-icon-1.svg" alt="Image" class="img-fluid"></span>
+              </div>
+              <h3 class="gsap-reveal-hero">Web Design</h3>
+              <p class="gsap-reveal-hero">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+
+
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4 mb-4">
+            <div class="service text-center">
+              <div class="gsap-reveal-hero mb-3">
+                <span class="icon-service"><img src="images/svg/service-icon-8.svg" alt="Image" class="img-fluid"></span>
+              </div>
+              <h3 class="gsap-reveal-hero">App Development</h3>
+              <p class="gsap-reveal-hero">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4 mb-4">
+            <div class="service text-center">
+              <div class="gsap-reveal-hero mb-3">
+                <span class="icon-service"><img src="images/svg/service-icon-4.svg" alt="Image" class="img-fluid"></span>
+              </div>
+              <h3 class="gsap-reveal-hero">Search Ranking</h3>
+              <p class="gsap-reveal-hero">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4 mb-4">
+            <div class="service text-center">
+              <div class="gsap-reveal-hero mb-3">
+                <span class="icon-service"><img src="images/svg/service-icon-5.svg" alt="Image" class="img-fluid"></span>
+              </div>
+              <h3 class="gsap-reveal-hero">Branding</h3>
+              <p class="gsap-reveal-hero">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="major-section pb-0" id="skills-section">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-7 text-center mx-auto">
+            <h2 class="section-heading gsap-reveal-hero mb-0"><strong>My Skillset</strong></h2>
+            <p class="gsap-reveal-hero">The Big Oxmox advised her not to do so, because there were thousands of bad Commas.</p>
+            <div class="wave gsap-reveal-hero" >
+              <svg>
+                <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="0">
+            <div class="progressbar" data-animate="false">
+              <div class="circle" data-percent="98">
+                <div class="number"></div>
+                <p class="caption">WordPress</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="progressbar" data-animate="false">
+              <div class="circle" data-percent="95">
+                <div class="number"></div>
+                <p class="caption">Web Design</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="progressbar" data-animate="false">
+              <div class="circle" data-percent="89">
+                <div class="number"></div>
+                <p class="caption">Web/Mobile App</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="progressbar" data-animate="false">
+              <div class="circle" data-percent="85">
+                <div class="number"></div>
+                <p class="caption">Photoshop</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="major-section testimonial-wrap" id="projects-section">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-lg-7 text-center mx-auto">
+              <h2 class="section-heading gsap-reveal-hero mb-0"><strong>Awards</strong></h2>
+  
+              <div class="wave gsap-reveal-hero" >
+                <svg>
+                  <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+  
+  
+          <div data-aos="fade-left" data-aos-delay="200">
+  
+  
+  
+            <div class="owl-carousel owl-3-slider">
+              <div class="item">
+                <div class="testimonial-v1">
+                  <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                  <div class="mb-4">
+                    <h3>James Smith</h3>
+                    <span class="caption">CEO &amp; Co-Founder</span>
+                  </div>
+                  <blockquote>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                  </blockquote>
+                </div>
+              </div>
+              <!-- END .item -->
+  
+              <div class="item">
+                <div class="testimonial-v1">
+                  <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                  <div class="mb-4">
+                    <h3>Jenny Wilson</h3>
+                    <span class="caption">CEO &amp; Co-Founder</span>
+                  </div>
+                  <blockquote>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                  </blockquote>
+                </div>
+              </div>
+              <!-- END .item -->
+  
+              <div class="item">
+                <div class="testimonial-v1">
+                  <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                  <div class="mb-4">
+                    <h3>Dan Anderson</h3>
+                    <span class="caption">CEO &amp; Co-Founder</span>
+                  </div>
+                  <blockquote>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                  </blockquote>
+                </div>
+              </div>
+              <!-- END .item -->
+  
+              <div class="item">
+                <div class="testimonial-v1">
+                  <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                  <div class="mb-4">
+                    <h3>James Smith</h3>
+                    <span class="caption">CEO &amp; Co-Founder</span>
+                  </div>
+                  <blockquote>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                  </blockquote>
+                </div>
+              </div>
+              <!-- END .item -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="major-section testimonial-wrap" id="awards-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-7 text-center mx-auto">
+            <h2 class="section-heading gsap-reveal-hero mb-0"><strong>Awards</strong></h2>
+
+            <div class="wave gsap-reveal-hero" >
+              <svg>
+                <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+
+        <div data-aos="fade-left" data-aos-delay="200">
+
+
+
+          <div class="owl-carousel owl-3-slider">
+            <div class="item">
+              <div class="testimonial-v1">
+                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                <div class="mb-4">
+                  <h3>James Smith</h3>
+                  <span class="caption">CEO &amp; Co-Founder</span>
+                </div>
+                <blockquote>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </blockquote>
+              </div>
+            </div>
+            <!-- END .item -->
+
+            <div class="item">
+              <div class="testimonial-v1">
+                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                <div class="mb-4">
+                  <h3>Jenny Wilson</h3>
+                  <span class="caption">CEO &amp; Co-Founder</span>
+                </div>
+                <blockquote>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </blockquote>
+              </div>
+            </div>
+            <!-- END .item -->
+
+            <div class="item">
+              <div class="testimonial-v1">
+                <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                <div class="mb-4">
+                  <h3>Dan Anderson</h3>
+                  <span class="caption">CEO &amp; Co-Founder</span>
+                </div>
+                <blockquote>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </blockquote>
+              </div>
+            </div>
+            <!-- END .item -->
+
+            <div class="item">
+              <div class="testimonial-v1">
+                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                <div class="mb-4">
+                  <h3>James Smith</h3>
+                  <span class="caption">CEO &amp; Co-Founder</span>
+                </div>
+                <blockquote>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </blockquote>
+              </div>
+            </div>
+            <!-- END .item -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="major-section" id="contact-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-7 text-center mx-auto">
+            <h2 class="section-heading gsap-reveal-hero mb-0"><strong>Contact Me</strong></h2>
+            <p class="gsap-reveal-hero">Available for work!</p>
+
+            <div class="wave gsap-reveal-hero" >
+              <svg>
+                <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <form action="#">
+              <div class="row">
+                <div class="col-lg-6 form-group">
+                  <input type="text" class="form-control" placeholder="Firstname">
+                </div>
+                <div class="col-lg-6 form-group">
+                  <input type="text" class="form-control" placeholder="Lastname">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 form-group">
+                  <input type="email" class="form-control" placeholder="Email address">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 form-group">
+                  <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Write your message..."></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 form-group">
+                  <input type="submit" class="btn btn-black" value="Send Message">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <div id="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d320.12856481718734!2d-73.97263090448001!3d40.78263296621774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588ff21eaaab%3A0xd0128d5d89a30429!2sMargarita%20Anthoine!5e0!3m2!1sen!2sph!4v1597149027268!5m2!1sen!2sph"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer">
+      <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3">
+              <div class="widget">
+              </div> <!-- /.widget -->
+            </div> <!-- /.col-lg-3 -->
+    
+          <div class="col-lg-3">
+            <div class="widget">
+              <h3>Home</h3>
+              <ul class="list-unstyled float-left links">
+                <li><a href="#about-section">About Me</a></li>
+                <li><a href="#skills-section">Skills</a></li>
+                <li><a href="#experience-section">Experience</a></li>
+                <li><a href="#education-section">Education</a></li>
+                <li><a href="#projects-section">Projects</a></li>
+                <li><a href="#awards-section">Awards</a></li>
+              </ul>
+            </div> <!-- /.widget -->
+          </div> <!-- /.col-lg-3 -->
+
+          <div class="col-lg-3">
+            <div class="widget">
+              <h3>Contact</h3>
+              <address>Montreal, Quebec, Canada</address>
+              <ul class="list-unstyled links mb-4">
+                <li><a href="tel://15146901526">+1 (514)-690-1526</a></li>
+                <li><a href="mailto:antoine.dangeard@gmail.com">antoine.dangeard@gmail.com</a></li>
+                <li><a href="mailto:antoine.dangeard@mail.mcgill.ca">antoine.dangeard@mail.mcgill.ca</a></li>
+              </ul>
+
+              <ul class="list-unstyled social">
+                <li><a href="https://www.facebook.com/antoine.dangeard.1/"><span class="icon-facebook"></span></a></li>
+                <li><a href="https://www.linkedin.com/in/antoine-dangeard-03531010a/"><span class="icon-linkedin"></span></a></li>
+                <li><a href="https://github.com/antoinedang"><span class="icon-github"></span></a></li>
+              </ul>
+
+            </div> <!-- /.widget -->
+          </div> <!-- /.col-lg-3 -->
+          <div class="col-lg-3">
+            <div class="widget">
+            </div> <!-- /.widget -->
+          </div> <!-- /.col-lg-3 -->
+
+
+        </div> <!-- /.row -->
+
+
+
+
+
+        <div class="row mt-5">
+          <div class="col-12 text-center">
+            <p class="mb-0">Thank you for reading my resume!</a>
+            </p>
+          </div>
+        </div>
+      </div> <!-- /.container -->
+    </div> <!-- /.site-footer -->
+
+    <div id="overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading very impressive candidate...</span>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/wave-animate.js"></script>
+    <script src="js/circle-progress.js"></script>
+    <script src="js/imagesloaded.pkgd.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/scrollmagic.animation.gsap.min.js"></script>
+
+
+    <script src="js/custom.js"></script>
+    
+  </body>
+
+  </html>
