@@ -53,8 +53,8 @@
 	.overlay {
 		position: relative;
 		z-index: 8;
-		opacity: 0;
-		visibility: hidden;
+		opacity: 1;
+		visibility: visible;
 		transition: .3s all ease;
 		&, &:before {
 			position: absolute;
@@ -108,8 +108,8 @@
 	}
 	&:hover {
 		.overlay {
-			opacity: 0;
-			visibility: hidden;
+			opacity: 1;
+			visibility: visible;
 		} 
 	}
 }

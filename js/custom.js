@@ -97,7 +97,7 @@ $(function(){
 				loop: true,
 				autoHeight: true,
 				margin: 20,
-				autoplay: true,
+				autoplay: false,
 				smartSpeed: 700,
 				items: 1,
 				stagePadding: 0,
@@ -391,9 +391,9 @@ $(function(){
 				setTimeout(function() {
 
 					tl2
-					.to(cover, 1, { marginLeft: '0', ease:Expo.easeInOut, onComplete() {
+					.to(cover, 0.5, { marginLeft: '0', ease:Expo.easeInOut, onComplete() {
 						tl2.set(revealContent, { x: 0 });
-						tl2.to(cover, 1, { marginLeft: '102%', ease:Expo.easeInOut });
+						tl2.to(cover, 0.5, { marginLeft: '102%', ease:Expo.easeInOut });
 					} } )
 				}, heroNum * 0 );
 

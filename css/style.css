@@ -40,7 +40,7 @@ a {
   -o-transition: .3s all ease;
   transition: .3s all ease; }
   a:hover {
-    color: #0389ff;
+    color: #0271d3;
     text-decoration: none; }
 
 ::-moz-selection {
@@ -626,15 +626,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-size: 30px;
   color: #000000; }
 
+.icon-outline {
+  /* background-color: #0389ff22; */
+  background-color: #ffffff11;
+  border-radius: 10%; /* Makes the border circular, adjust as needed */
+  padding: 10px; /* Adjust padding as needed for the desired size */
+}
+
 .item {
   border: none;
   margin-bottom: 30px;
   border-radius: 4px; }
-  .item a {
-    display: block;
-    overflow: hidden;
-    position: relative;
-    border-radius: 4px; }
     .item a img {
       position: relative;
       -webkit-transform: scale(1);
@@ -1145,7 +1147,7 @@ figure.dotted-bg {
 #about-section {
   margin-top: 7rem; }
   #about-section .container {
-    background: #0389ff;
+    background: #2298ff;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 50px;
@@ -1205,19 +1207,21 @@ figure.dotted-bg {
   .portfolio-item .overlay, .blog-item .overlay {
     position: relative;
     z-index: 8;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease; }
     .portfolio-item .overlay, .portfolio-item .overlay:before, .blog-item .overlay, .blog-item .overlay:before {
       position: absolute;
+      pointer-events: none;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0; }
     .portfolio-item .overlay:before, .blog-item .overlay:before {
       background: rgba(0, 0, 0, 0.5);
+      pointer-events: none;
       content: ""; }
   .portfolio-item .wrap-icon, .blog-item .wrap-icon {
     position: absolute;
@@ -1464,8 +1468,8 @@ figure.dotted-bg {
   .social-icons li a {
     color: rgba(255, 255, 255, 0.5);
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     position: relative;
     border-radius: 50%;
     background: #303030; }
@@ -1484,8 +1488,8 @@ figure.dotted-bg {
 .social-icons.light li a {
   color: #000000;
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   position: relative;
   border-radius: 50%;
   background: #f8f9fa; }
