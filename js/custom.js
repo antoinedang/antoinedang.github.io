@@ -391,9 +391,9 @@ $(function(){
 				setTimeout(function() {
 
 					tl2
-					.to(cover, 0.3, { marginLeft: '0', ease:Expo.easeInOut, onComplete() {
+					.to(cover, 0.25, { marginLeft: '0', ease:Expo.easeInOut, onComplete() {
 						tl2.set(revealContent, { x: 0 });
-						tl2.to(cover, 0.3, { marginLeft: '102%', ease:Expo.easeInOut });
+						tl2.to(cover, 0.25, { marginLeft: '102%', ease:Expo.easeInOut });
 					} } )
 				}, heroNum * 0 );
 
