@@ -603,6 +603,7 @@ var owlSingleSlider = function () {
 
 
 const element = document.querySelector('.little_robot');
+const touch_element = document.querySelector('.robot-touch');
 var step_time = 500;
 var time_between_steps = 50;
 var step_size = 20;
@@ -621,21 +622,25 @@ var robot6_time_multiplier = 1;
 var robot7_time_multiplier = 1;
 
 function moveRobotBackToBeginning() {
-	element.style.left = `105%`
+	element.style.left = `105%`;
+	touch_element.style.left = `105%`;
 	setTimeout(takeOneRobotStep, (step_time+time_between_steps)/robot0_time_multiplier);
 }
 
 function takeOneRobotStep() {
 	const px_to_percent = 100 / window.innerWidth;
-	const currentLeft = parseFloat(element.style.left) || 105;
-	element.style.left = `${currentLeft - px_to_percent*step_size}%`; 
-	if (currentLeft < -150*px_to_percent) {
+	const currentLeft = isNaN(parseFloat(element.style.left)) ? 105 : parseFloat(element.style.left);
+	element.style.left = `${currentLeft - px_to_percent*step_size}%`;
+	touch_element.style.left = element.style.left;
+	if (currentLeft < -300*px_to_percent) {
 		element.style.bottom = '-500px';
 		element.style.opacity = '0';
+		touch_element.style.bottom = element.style.bottom;
 		setTimeout(moveRobotBackToBeginning, (step_time+time_between_steps)/robot0_time_multiplier);
 	} else {
 		element.style.bottom = '-7px';
 		element.style.opacity = '1';
+		touch_element.style.bottom = element.style.bottom;
 		setTimeout(takeOneRobotStep, (step_time+time_between_steps)/robot0_time_multiplier);
 	}
 }
@@ -653,7 +658,7 @@ function ChildRobot1TakeOneStep() {
 	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot1_element.style.left)) ? 105 : parseFloat(ChildRobot1_element.style.left);
 	ChildRobot1_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
-	if (currentLeft < -150*px_to_percent) {
+	if (currentLeft < -300*px_to_percent) {
 		ChildRobot1_element.style.bottom = '-500px';
 		ChildRobot1_element.style.opacity = '0';
 		setTimeout(moveChildRobot1BackToBeginning, (step_time+time_between_steps)/robot1_time_multiplier);
@@ -678,7 +683,7 @@ function ChildRobot2TakeOneStep() {
 	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot2_element.style.left)) ? 105 : parseFloat(ChildRobot2_element.style.left);
 	ChildRobot2_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
-	if (currentLeft < -150*px_to_percent) {
+	if (currentLeft < -300*px_to_percent) {
 		ChildRobot2_element.style.bottom = '-500px';
 		ChildRobot2_element.style.opacity = '0';
 		setTimeout(moveChildRobot2BackToBeginning, (step_time+time_between_steps)/robot2_time_multiplier);
@@ -702,7 +707,7 @@ function ChildRobot3TakeOneStep() {
 	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot3_element.style.left)) ? 105 : parseFloat(ChildRobot3_element.style.left);
 	ChildRobot3_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
-	if (currentLeft < -150*px_to_percent) {
+	if (currentLeft < -300*px_to_percent) {
 		ChildRobot3_element.style.bottom = '-500px';
 		ChildRobot3_element.style.opacity = '0';
 		setTimeout(moveChildRobot3BackToBeginning, (step_time+time_between_steps)/robot3_time_multiplier);
@@ -726,7 +731,7 @@ function ChildRobot4TakeOneStep() {
 	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot4_element.style.left)) ? 105 : parseFloat(ChildRobot4_element.style.left);
 	ChildRobot4_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
-	if (currentLeft < -150*px_to_percent) {
+	if (currentLeft < -300*px_to_percent) {
 		ChildRobot4_element.style.bottom = '-500px';
 		ChildRobot4_element.style.opacity = '0';
 		setTimeout(moveChildRobot4BackToBeginning, (step_time+time_between_steps)/robot4_time_multiplier);
@@ -750,7 +755,7 @@ function ChildRobot5TakeOneStep() {
 	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot5_element.style.left)) ? 105 : parseFloat(ChildRobot5_element.style.left);
 	ChildRobot5_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
-	if (currentLeft < -150*px_to_percent) {
+	if (currentLeft < -300*px_to_percent) {
 		ChildRobot5_element.style.bottom = '-500px';
 		ChildRobot5_element.style.opacity = '0';
 		setTimeout(moveChildRobot5BackToBeginning, (step_time+time_between_steps)/robot5_time_multiplier);
@@ -774,7 +779,7 @@ function ChildRobot6TakeOneStep() {
 	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot6_element.style.left)) ? 105 : parseFloat(ChildRobot6_element.style.left);
 	ChildRobot6_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
-	if (currentLeft < -150*px_to_percent) {
+	if (currentLeft < -300*px_to_percent) {
 		ChildRobot6_element.style.bottom = '-500px';
 		ChildRobot6_element.style.opacity = '0';
 		setTimeout(moveChildRobot6BackToBeginning, (step_time+time_between_steps)/robot6_time_multiplier);
@@ -798,7 +803,7 @@ function ChildRobot7TakeOneStep() {
 	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot7_element.style.left)) ? 105 : parseFloat(ChildRobot7_element.style.left);
 	ChildRobot7_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
-	if (currentLeft < -150*px_to_percent) {
+	if (currentLeft < -300*px_to_percent) {
 		ChildRobot7_element.style.bottom = '-500px';
 		ChildRobot7_element.style.opacity = '0';
 		setTimeout(moveChildRobot7BackToBeginning, (step_time+time_between_steps)/robot7_time_multiplier);
@@ -811,74 +816,241 @@ function ChildRobot7TakeOneStep() {
 
 setTimeout(ChildRobot7TakeOneStep, 8 * time_between_robots);
 
-element.addEventListener('mouseenter', () => {
-	element.setSpeed(2);
-	robot0_time_multiplier = 2;
+const impact_element = document.querySelector('.impact-jolt');
+const spark_element = document.querySelector('.impact-break');
+
+var touch_element_opacity = 1;
+
+function spawnImpact(event) {
+	impact_element.style.left = `${event.clientX}px`;
+	impact_element.style.top = `${event.clientY}px`;
+	impact_element.stop();
+	impact_element.play();
+	touch_element.style.opacity = `${touch_element_opacity - 0.5}`;
+	touch_element_opacity -= 0.5;
+}
+
+function spawnSparkImpact(event) {
+	spark_element.style.left = `${event.clientX}px`;
+	spark_element.style.top = `${event.clientY}px`;
+	spark_element.stop();
+	spark_element.play();
+	touch_element.style.opacity = `${touch_element_opacity - 0.5}`;
+	touch_element_opacity -= 0.5;
+}
+
+element.addEventListener('click', (event) => {
+	if (robot0_time_multiplier == 1) {
+		spawnImpact(event);
+		element.setSpeed(2);
+		robot0_time_multiplier = 2;
+		element.style.transition = "left 0.25s linear";
+	} else {
+		spawnSparkImpact(event);
+		element.setSpeed(1);
+		robot0_time_multiplier = 1;
+		element.style.transition = "left 0.5s linear";
+	}
 });
-element.addEventListener('mouseleave', () => {
-	element.setSpeed(1);
-	robot0_time_multiplier = 1;
+element.addEventListener('tap', (event) => {
+	if (robot0_time_multiplier == 1) {
+		spawnImpact(event);
+		element.setSpeed(2);
+		robot0_time_multiplier = 2;
+		element.style.transition = "left 0.25s linear";
+	} else {
+		spawnSparkImpact(event);
+		element.setSpeed(1);
+		robot0_time_multiplier = 1;
+		element.style.transition = "left 0.5s linear";
+	}
 });
 
-ChildRobot1_element.addEventListener('mouseenter', () => {
-	ChildRobot1_element.setSpeed(3);
-	robot1_time_multiplier = 2;
+ChildRobot1_element.addEventListener('click', (event) => {
+	if (robot1_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot1_element.setSpeed(3);
+		robot1_time_multiplier = 2;
+		ChildRobot1_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot1_element.setSpeed(1.5);
+		robot1_time_multiplier = 1;
+		ChildRobot1_element.style.transition = "left 0.25s linear";
+	}
 });
-ChildRobot1_element.addEventListener('mouseleave', () => {
-	ChildRobot1_element.setSpeed(1.5);
-	robot1_time_multiplier = 1;
-});
-
-ChildRobot2_element.addEventListener('mouseenter', () => {
-	ChildRobot2_element.setSpeed(3);
-	robot2_time_multiplier = 2;
-});
-ChildRobot2_element.addEventListener('mouseleave', () => {
-	ChildRobot2_element.setSpeed(1.5);
-	robot2_time_multiplier = 1;
-});
-
-ChildRobot3_element.addEventListener('mouseenter', () => {
-	ChildRobot3_element.setSpeed(3);
-	robot3_time_multiplier = 2;
-});
-ChildRobot3_element.addEventListener('mouseleave', () => {
-	ChildRobot3_element.setSpeed(1.5);
-	robot3_time_multiplier = 1;
-});
-
-ChildRobot4_element.addEventListener('mouseenter', () => {
-	ChildRobot4_element.setSpeed(3);
-	robot4_time_multiplier = 2;
-});
-ChildRobot4_element.addEventListener('mouseleave', () => {
-	ChildRobot4_element.setSpeed(1.5);
-	robot4_time_multiplier = 1;
+ChildRobot1_element.addEventListener('tap', (event) => {
+	if (robot1_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot1_element.setSpeed(3);
+		robot1_time_multiplier = 2;
+		ChildRobot1_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot1_element.setSpeed(1.5);
+		robot1_time_multiplier = 1;
+		ChildRobot1_element.style.transition = "left 0.25s linear";
+	}
 });
 
-ChildRobot5_element.addEventListener('mouseenter', () => {
-	ChildRobot5_element.setSpeed(3);
-	robot5_time_multiplier = 2;
+ChildRobot2_element.addEventListener('click', (event) => {
+	if (robot2_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot2_element.setSpeed(3);
+		robot2_time_multiplier = 2;
+		ChildRobot2_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot2_element.setSpeed(1.5);
+		robot2_time_multiplier = 1;
+		ChildRobot2_element.style.transition = "left 0.25s linear";
+	}
 });
-ChildRobot5_element.addEventListener('mouseleave', () => {
-	ChildRobot5_element.setSpeed(1.5);
-	robot5_time_multiplier = 1;
+ChildRobot2_element.addEventListener('tap', (event) => {
+	if (robot2_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot2_element.setSpeed(3);
+		robot2_time_multiplier = 2;
+		ChildRobot2_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot2_element.setSpeed(1.5);
+		robot2_time_multiplier = 1;
+		ChildRobot2_element.style.transition = "left 0.25s linear";
+	}
 });
 
-ChildRobot6_element.addEventListener('mouseenter', () => {
-	ChildRobot6_element.setSpeed(3);
-	robot6_time_multiplier = 2;
+ChildRobot3_element.addEventListener('click', (event) => {
+	if (robot3_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot3_element.setSpeed(3);
+		robot3_time_multiplier = 2;
+		ChildRobot3_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot3_element.setSpeed(1.5);
+		robot3_time_multiplier = 1;
+		ChildRobot3_element.style.transition = "left 0.25s linear";
+	}
 });
-ChildRobot6_element.addEventListener('mouseleave', () => {
-	ChildRobot6_element.setSpeed(1.5);
-	robot6_time_multiplier = 1;
+ChildRobot3_element.addEventListener('tap', (event) => {
+	if (robot3_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot3_element.setSpeed(3);
+		robot3_time_multiplier = 2;
+		ChildRobot3_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot3_element.setSpeed(1.5);
+		robot3_time_multiplier = 1;
+		ChildRobot3_element.style.transition = "left 0.25s linear";
+	}
 });
 
-ChildRobot7_element.addEventListener('mouseenter', () => {
-	ChildRobot7_element.setSpeed(3);
-	robot7_time_multiplier = 2;
+ChildRobot4_element.addEventListener('click', (event) => {
+	if (robot4_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot4_element.setSpeed(3);
+		robot4_time_multiplier = 2;
+		ChildRobot4_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot4_element.setSpeed(1.5);
+		robot4_time_multiplier = 1;
+		ChildRobot4_element.style.transition = "left 0.25s linear";
+	}
 });
-ChildRobot7_element.addEventListener('mouseleave', () => {
-	ChildRobot7_element.setSpeed(1.5);
-	robot7_time_multiplier = 1;
+ChildRobot4_element.addEventListener('tap', (event) => {
+	if (robot4_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot4_element.setSpeed(3);
+		robot4_time_multiplier = 2;
+		ChildRobot4_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot4_element.setSpeed(1.5);
+		robot4_time_multiplier = 1;
+		ChildRobot4_element.style.transition = "left 0.25s linear";
+	}
+});
+
+ChildRobot5_element.addEventListener('click', (event) => {
+	if (robot5_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot5_element.setSpeed(3);
+		robot5_time_multiplier = 2;
+		ChildRobot5_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot5_element.setSpeed(1.5);
+		robot5_time_multiplier = 1;
+		ChildRobot5_element.style.transition = "left 0.25s linear";
+	}
+});
+ChildRobot5_element.addEventListener('tap', (event) => {
+	if (robot5_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot5_element.setSpeed(3);
+		robot5_time_multiplier = 2;
+		ChildRobot5_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot5_element.setSpeed(1.5);
+		robot5_time_multiplier = 1;
+		ChildRobot5_element.style.transition = "left 0.25s linear";
+	}
+});
+
+ChildRobot6_element.addEventListener('click', (event) => {
+	if (robot6_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot6_element.setSpeed(3);
+		robot6_time_multiplier = 2;
+		ChildRobot6_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot6_element.setSpeed(1.5);
+		robot6_time_multiplier = 1;
+		ChildRobot6_element.style.transition = "left 0.25s linear";
+	}
+});
+ChildRobot6_element.addEventListener('tap', (event) => {
+	if (robot6_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot6_element.setSpeed(3);
+		robot6_time_multiplier = 2;
+		ChildRobot6_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot6_element.setSpeed(1.5);
+		robot6_time_multiplier = 1;
+		ChildRobot6_element.style.transition = "left 0.25s linear";
+	}
+});
+
+ChildRobot7_element.addEventListener('click', (event) => {
+	if (robot7_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot7_element.setSpeed(3);
+		robot7_time_multiplier = 2;
+		ChildRobot7_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot7_element.setSpeed(1.5);
+		robot7_time_multiplier = 1;
+		ChildRobot7_element.style.transition = "left 0.25s linear";
+	}
+});
+ChildRobot7_element.addEventListener('tap', (event) => {
+	if (robot7_time_multiplier == 1) {
+		spawnImpact(event);
+		ChildRobot7_element.setSpeed(3);
+		robot7_time_multiplier = 2;
+		ChildRobot7_element.style.transition = "left 0.125s linear";
+	} else {
+		spawnSparkImpact(event);
+		ChildRobot7_element.setSpeed(1.5);
+		robot7_time_multiplier = 1;
+		ChildRobot7_element.style.transition = "left 0.25s linear";
+	}
 });
