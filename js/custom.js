@@ -867,6 +867,7 @@ element.addEventListener('tap', (event) => {
 });
 
 ChildRobot1_element.addEventListener('click', (event) => {
+	touch_element_opacity = 0;;
 	if (robot1_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot1_element.setSpeed(3);
@@ -880,6 +881,7 @@ ChildRobot1_element.addEventListener('click', (event) => {
 	}
 });
 ChildRobot1_element.addEventListener('tap', (event) => {
+	touch_element_opacity = 0;;
 	if (robot1_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot1_element.setSpeed(3);
@@ -894,6 +896,7 @@ ChildRobot1_element.addEventListener('tap', (event) => {
 });
 
 ChildRobot2_element.addEventListener('click', (event) => {
+	touch_element_opacity = 0;;
 	if (robot2_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot2_element.setSpeed(3);
@@ -907,6 +910,7 @@ ChildRobot2_element.addEventListener('click', (event) => {
 	}
 });
 ChildRobot2_element.addEventListener('tap', (event) => {
+	touch_element_opacity = 0;;
 	if (robot2_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot2_element.setSpeed(3);
@@ -921,6 +925,7 @@ ChildRobot2_element.addEventListener('tap', (event) => {
 });
 
 ChildRobot3_element.addEventListener('click', (event) => {
+	touch_element_opacity = 0;;
 	if (robot3_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot3_element.setSpeed(3);
@@ -934,6 +939,7 @@ ChildRobot3_element.addEventListener('click', (event) => {
 	}
 });
 ChildRobot3_element.addEventListener('tap', (event) => {
+	touch_element_opacity = 0;;
 	if (robot3_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot3_element.setSpeed(3);
@@ -948,6 +954,7 @@ ChildRobot3_element.addEventListener('tap', (event) => {
 });
 
 ChildRobot4_element.addEventListener('click', (event) => {
+	touch_element_opacity = 0;;
 	if (robot4_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot4_element.setSpeed(3);
@@ -961,6 +968,7 @@ ChildRobot4_element.addEventListener('click', (event) => {
 	}
 });
 ChildRobot4_element.addEventListener('tap', (event) => {
+	touch_element_opacity = 0;;
 	if (robot4_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot4_element.setSpeed(3);
@@ -975,6 +983,7 @@ ChildRobot4_element.addEventListener('tap', (event) => {
 });
 
 ChildRobot5_element.addEventListener('click', (event) => {
+	touch_element_opacity = 0;;
 	if (robot5_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot5_element.setSpeed(3);
@@ -988,6 +997,7 @@ ChildRobot5_element.addEventListener('click', (event) => {
 	}
 });
 ChildRobot5_element.addEventListener('tap', (event) => {
+	touch_element_opacity = 0;;
 	if (robot5_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot5_element.setSpeed(3);
@@ -1002,6 +1012,7 @@ ChildRobot5_element.addEventListener('tap', (event) => {
 });
 
 ChildRobot6_element.addEventListener('click', (event) => {
+	touch_element_opacity = 0;;
 	if (robot6_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot6_element.setSpeed(3);
@@ -1015,6 +1026,7 @@ ChildRobot6_element.addEventListener('click', (event) => {
 	}
 });
 ChildRobot6_element.addEventListener('tap', (event) => {
+	touch_element_opacity = 0;;
 	if (robot6_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot6_element.setSpeed(3);
@@ -1029,6 +1041,7 @@ ChildRobot6_element.addEventListener('tap', (event) => {
 });
 
 ChildRobot7_element.addEventListener('click', (event) => {
+	touch_element_opacity = 0;;
 	if (robot7_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot7_element.setSpeed(3);
@@ -1042,6 +1055,7 @@ ChildRobot7_element.addEventListener('click', (event) => {
 	}
 });
 ChildRobot7_element.addEventListener('tap', (event) => {
+	touch_element_opacity = 0;;
 	if (robot7_time_multiplier == 1) {
 		spawnImpact(event);
 		ChildRobot7_element.setSpeed(3);
