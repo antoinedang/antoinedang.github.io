@@ -602,5 +602,183 @@ var owlSingleSlider = function () {
 
 
 
+const element = document.querySelector('.little_robot');
+const step_time = 500;
+const time_between_steps = 50;
+const step_size = 1.2;
+const time_between_robots = 2000;
+
+function moveRobotBackToBeginning() {
+	element.style.bottom = '-500px';
+	element.style.left = '105%'
+	setTimeout(takeOneRobotStep, step_time+time_between_steps);
+}
+
+function takeOneRobotStep() {
+	element.style.bottom = '-7px';
+	const currentLeft = parseFloat(element.style.left) || 105;
+	element.style.left = `${currentLeft - step_size}%`; 
+	if (currentLeft < -5) {
+		setTimeout(moveRobotBackToBeginning, step_time+time_between_steps);
+	} else {
+		setTimeout(takeOneRobotStep, step_time+time_between_steps);
+	}
+}
+
+setTimeout(takeOneRobotStep, time_between_steps);
 
 
+const child_step_time = 250;
+const child_time_between_steps = 25;
+const child_step_size = 0.6;
+
+const ChildRobot1_element = document.querySelector('.ChildRobot1');
+
+function moveChildRobot1BackToBeginning() {
+	ChildRobot1_element.style.left = '105%'
+	setTimeout(ChildRobot1TakeOneStep, child_step_time+child_time_between_steps);
+}
+
+function ChildRobot1TakeOneStep() {
+	console.log(parseFloat(ChildRobot1_element.style.left))
+	const currentLeft = isNaN(parseFloat(ChildRobot1_element.style.left)) ? 105 : parseFloat(ChildRobot1_element.style.left);
+	ChildRobot1_element.style.left = `${currentLeft - child_step_size}%`; 
+	console.log(currentLeft);
+	if (currentLeft < -5) {
+		ChildRobot1_element.style.bottom = '-500px';
+		setTimeout(moveChildRobot1BackToBeginning, step_time+time_between_steps);
+	} else {
+		ChildRobot1_element.style.bottom = '-3px';
+		setTimeout(ChildRobot1TakeOneStep, child_step_time+child_time_between_steps);
+	}
+}
+
+setTimeout(ChildRobot1TakeOneStep, 2 * time_between_robots);
+
+
+const ChildRobot2_element = document.querySelector('.ChildRobot2');
+
+function moveChildRobot2BackToBeginning() {
+	ChildRobot2_element.style.left = '105%'
+	setTimeout(ChildRobot2TakeOneStep, child_step_time+child_time_between_steps);
+}
+
+function ChildRobot2TakeOneStep() {
+	ChildRobot2_element.style.bottom = '-3px';
+	const currentLeft = isNaN(parseFloat(ChildRobot2_element.style.left)) ? 105 : parseFloat(ChildRobot2_element.style.left);
+	ChildRobot2_element.style.left = `${currentLeft - child_step_size}%`; 
+	if (currentLeft < -5) {
+		ChildRobot2_element.style.bottom = '-500px';
+		setTimeout(moveChildRobot2BackToBeginning, step_time+time_between_steps);
+	} else {
+		setTimeout(ChildRobot2TakeOneStep, child_step_time+child_time_between_steps);
+	}
+}
+
+setTimeout(ChildRobot2TakeOneStep, 3 * time_between_robots);
+
+const ChildRobot3_element = document.querySelector('.ChildRobot3');
+
+function moveChildRobot3BackToBeginning() {
+	ChildRobot3_element.style.left = '105%'
+	setTimeout(ChildRobot3TakeOneStep, child_step_time+child_time_between_steps);
+}
+
+function ChildRobot3TakeOneStep() {
+	ChildRobot3_element.style.bottom = '-3px';
+	const currentLeft = isNaN(parseFloat(ChildRobot3_element.style.left)) ? 105 : parseFloat(ChildRobot3_element.style.left);
+	ChildRobot3_element.style.left = `${currentLeft - child_step_size}%`; 
+	if (currentLeft < -5) {
+		ChildRobot3_element.style.bottom = '-500px';
+		setTimeout(moveChildRobot3BackToBeginning, step_time+time_between_steps);
+	} else {
+		setTimeout(ChildRobot3TakeOneStep, child_step_time+child_time_between_steps);
+	}
+}
+
+setTimeout(ChildRobot3TakeOneStep, 4 * time_between_robots);
+
+const ChildRobot4_element = document.querySelector('.ChildRobot4');
+
+function moveChildRobot4BackToBeginning() {
+	ChildRobot4_element.style.left = '105%'
+	setTimeout(ChildRobot4TakeOneStep, child_step_time+child_time_between_steps);
+}
+
+function ChildRobot4TakeOneStep() {
+	ChildRobot4_element.style.bottom = '-3px';
+	const currentLeft = isNaN(parseFloat(ChildRobot4_element.style.left)) ? 105 : parseFloat(ChildRobot4_element.style.left);
+	ChildRobot4_element.style.left = `${currentLeft - child_step_size}%`; 
+	if (currentLeft < -5) {
+		ChildRobot4_element.style.bottom = '-500px';
+		setTimeout(moveChildRobot4BackToBeginning, step_time+time_between_steps);
+	} else {
+		setTimeout(ChildRobot4TakeOneStep, child_step_time+child_time_between_steps);
+	}
+}
+
+setTimeout(ChildRobot4TakeOneStep, 5 * time_between_robots);
+
+const ChildRobot5_element = document.querySelector('.ChildRobot5');
+
+function moveChildRobot5BackToBeginning() {
+	ChildRobot5_element.style.left = '105%'
+	setTimeout(ChildRobot5TakeOneStep, child_step_time+child_time_between_steps);
+}
+
+function ChildRobot5TakeOneStep() {
+	ChildRobot5_element.style.bottom = '-3px';
+	const currentLeft = isNaN(parseFloat(ChildRobot5_element.style.left)) ? 105 : parseFloat(ChildRobot5_element.style.left);
+	ChildRobot5_element.style.left = `${currentLeft - child_step_size}%`; 
+	if (currentLeft < -5) {
+		ChildRobot5_element.style.bottom = '-500px';
+		setTimeout(moveChildRobot5BackToBeginning, step_time+time_between_steps);
+	} else {
+		setTimeout(ChildRobot5TakeOneStep, child_step_time+child_time_between_steps);
+	}
+}
+
+setTimeout(ChildRobot5TakeOneStep, 6 * time_between_robots);
+
+const ChildRobot6_element = document.querySelector('.ChildRobot6');
+
+function moveChildRobot6BackToBeginning() {
+	ChildRobot6_element.style.left = '105%'
+	setTimeout(ChildRobot6TakeOneStep, child_step_time+child_time_between_steps);
+}
+
+function ChildRobot6TakeOneStep() {
+	ChildRobot6_element.style.bottom = '-3px';
+	const currentLeft = isNaN(parseFloat(ChildRobot6_element.style.left)) ? 105 : parseFloat(ChildRobot6_element.style.left);
+	ChildRobot6_element.style.left = `${currentLeft - child_step_size}%`; 
+	if (currentLeft < -5) {
+		ChildRobot6_element.style.bottom = '-500px';
+		setTimeout(moveChildRobot6BackToBeginning, step_time+time_between_steps);
+	} else {
+		setTimeout(ChildRobot6TakeOneStep, child_step_time+child_time_between_steps);
+	}
+}
+
+setTimeout(ChildRobot6TakeOneStep, 7 * time_between_robots);
+
+const ChildRobot7_element = document.querySelector('.ChildRobot7');
+
+function moveChildRobot7BackToBeginning() {
+	ChildRobot7_element.style.bottom = '-500px';
+	ChildRobot7_element.style.left = '105%'
+	setTimeout(ChildRobot7TakeOneStep, child_step_time+child_time_between_steps);
+}
+
+function ChildRobot7TakeOneStep() {
+	ChildRobot7_element.style.bottom = '-3px';
+	const currentLeft = isNaN(parseFloat(ChildRobot7_element.style.left)) ? 105 : parseFloat(ChildRobot7_element.style.left);
+	ChildRobot7_element.style.left = `${currentLeft - child_step_size}%`; 
+	if (currentLeft < -5) {
+		ChildRobot7_element.style.bottom = '-500px';
+		setTimeout(moveChildRobot7BackToBeginning, step_time+time_between_steps);
+	} else {
+		setTimeout(ChildRobot7TakeOneStep, child_step_time+child_time_between_steps);
+	}
+}
+
+setTimeout(ChildRobot7TakeOneStep, 8 * time_between_robots);

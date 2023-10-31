@@ -1,8 +1,88 @@
+html {
+  overflow-x: hidden;
+}
+
+.little_robot {
+  width: 10%;
+  height: 10%;
+  position: fixed;
+  left: 105%;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+  transition: left 0.5s linear;
+}
+
+.ChildRobot1 {
+  width: 5%;
+  height: 5%;
+  position: fixed;
+  left: 105%;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+  transition: left 0.25s linear;
+}
+.ChildRobot2 {
+  width: 5%;
+  height: 5%;
+  position: fixed;
+  left: 105%;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+  transition: left 0.25s linear;
+}
+.ChildRobot3 {
+  width: 5%;
+  height: 5%;
+  position: fixed;
+  left: 105%;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+  transition: left 0.25s linear;
+}
+.ChildRobot4 {
+  width: 5%;
+  height: 5%;
+  position: fixed;
+  left: 105%;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+  transition: left 0.25s linear;
+}
+.ChildRobot5 {
+  width: 5%;
+  height: 5%;
+  position: fixed;
+  left: 105%;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+  transition: left 0.25s linear;
+}
+.ChildRobot6 {
+  width: 5%;
+  height: 5%;
+  position: fixed;
+  left: 105%;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+  transition: left 0.25s linear;
+}
+.ChildRobot7 {
+  width: 5%;
+  height: 5%;
+  position: fixed;
+  left: 105%;
+  transform: translate(-50%, 0%);
+  z-index: 10;
+  transition: left 0.25s linear;
+}
+
 body {
   font-family: "PT Mono", monospace;
   line-height: 1.6;
   background: #ffffff;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
   font-size: 16px; }
   body:before {
     content: "";
@@ -822,6 +902,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   -o-transition: .3s all ease;
   transition: .3s all ease;
   position: relative;
+  background-color: #f3f3f3;
   border-radius: 10px; }
   .testimonial-v1 img {
     width: 80px !important;
