@@ -603,53 +603,64 @@ var owlSingleSlider = function () {
 
 
 const element = document.querySelector('.little_robot');
-const step_time = 500;
-const time_between_steps = 50;
-const step_size = 1.2;
-const time_between_robots = 2000;
+var step_time = 500;
+var time_between_steps = 50;
+var step_size = 20;
+var time_between_robots = 2000;
+var child_step_time = 300;
+var child_time_between_steps = 30;
+var child_step_size = 12;
+
+var robot0_time_multiplier = 1;
+var robot1_time_multiplier = 1;
+var robot2_time_multiplier = 1;
+var robot3_time_multiplier = 1;
+var robot4_time_multiplier = 1;
+var robot5_time_multiplier = 1;
+var robot6_time_multiplier = 1;
+var robot7_time_multiplier = 1;
 
 function moveRobotBackToBeginning() {
-	element.style.bottom = '-500px';
-	element.style.left = '105%'
-	setTimeout(takeOneRobotStep, step_time+time_between_steps);
+	element.style.left = `105%`
+	setTimeout(takeOneRobotStep, (step_time+time_between_steps)/robot0_time_multiplier);
 }
 
 function takeOneRobotStep() {
-	element.style.bottom = '-7px';
+	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = parseFloat(element.style.left) || 105;
-	element.style.left = `${currentLeft - step_size}%`; 
-	if (currentLeft < -5) {
-		setTimeout(moveRobotBackToBeginning, step_time+time_between_steps);
+	element.style.left = `${currentLeft - px_to_percent*step_size}%`; 
+	if (currentLeft < -150*px_to_percent) {
+		element.style.bottom = '-500px';
+		element.style.opacity = '0';
+		setTimeout(moveRobotBackToBeginning, (step_time+time_between_steps)/robot0_time_multiplier);
 	} else {
-		setTimeout(takeOneRobotStep, step_time+time_between_steps);
+		element.style.bottom = '-7px';
+		element.style.opacity = '1';
+		setTimeout(takeOneRobotStep, (step_time+time_between_steps)/robot0_time_multiplier);
 	}
 }
 
-setTimeout(takeOneRobotStep, time_between_steps);
-
-
-const child_step_time = 250;
-const child_time_between_steps = 25;
-const child_step_size = 0.6;
+setTimeout(takeOneRobotStep, (time_between_steps));
 
 const ChildRobot1_element = document.querySelector('.ChildRobot1');
 
 function moveChildRobot1BackToBeginning() {
 	ChildRobot1_element.style.left = '105%'
-	setTimeout(ChildRobot1TakeOneStep, child_step_time+child_time_between_steps);
+	setTimeout(ChildRobot1TakeOneStep, (child_step_time+child_time_between_steps)/robot1_time_multiplier);
 }
 
 function ChildRobot1TakeOneStep() {
-	console.log(parseFloat(ChildRobot1_element.style.left))
+	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot1_element.style.left)) ? 105 : parseFloat(ChildRobot1_element.style.left);
-	ChildRobot1_element.style.left = `${currentLeft - child_step_size}%`; 
-	console.log(currentLeft);
-	if (currentLeft < -5) {
+	ChildRobot1_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
+	if (currentLeft < -150*px_to_percent) {
 		ChildRobot1_element.style.bottom = '-500px';
-		setTimeout(moveChildRobot1BackToBeginning, step_time+time_between_steps);
+		ChildRobot1_element.style.opacity = '0';
+		setTimeout(moveChildRobot1BackToBeginning, (step_time+time_between_steps)/robot1_time_multiplier);
 	} else {
-		ChildRobot1_element.style.bottom = '-3px';
-		setTimeout(ChildRobot1TakeOneStep, child_step_time+child_time_between_steps);
+		ChildRobot1_element.style.bottom = '-4px';
+		ChildRobot1_element.style.opacity = '1';
+		setTimeout(ChildRobot1TakeOneStep, (child_step_time+child_time_between_steps)/robot1_time_multiplier);
 	}
 }
 
@@ -660,18 +671,21 @@ const ChildRobot2_element = document.querySelector('.ChildRobot2');
 
 function moveChildRobot2BackToBeginning() {
 	ChildRobot2_element.style.left = '105%'
-	setTimeout(ChildRobot2TakeOneStep, child_step_time+child_time_between_steps);
+	setTimeout(ChildRobot2TakeOneStep, (child_step_time+child_time_between_steps)/robot2_time_multiplier);
 }
 
 function ChildRobot2TakeOneStep() {
-	ChildRobot2_element.style.bottom = '-3px';
+	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot2_element.style.left)) ? 105 : parseFloat(ChildRobot2_element.style.left);
-	ChildRobot2_element.style.left = `${currentLeft - child_step_size}%`; 
-	if (currentLeft < -5) {
+	ChildRobot2_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
+	if (currentLeft < -150*px_to_percent) {
 		ChildRobot2_element.style.bottom = '-500px';
-		setTimeout(moveChildRobot2BackToBeginning, step_time+time_between_steps);
+		ChildRobot2_element.style.opacity = '0';
+		setTimeout(moveChildRobot2BackToBeginning, (step_time+time_between_steps)/robot2_time_multiplier);
 	} else {
-		setTimeout(ChildRobot2TakeOneStep, child_step_time+child_time_between_steps);
+		ChildRobot2_element.style.bottom = '-4px';
+		ChildRobot2_element.style.opacity = '1';
+		setTimeout(ChildRobot2TakeOneStep, (child_step_time+child_time_between_steps)/robot2_time_multiplier);
 	}
 }
 
@@ -681,18 +695,21 @@ const ChildRobot3_element = document.querySelector('.ChildRobot3');
 
 function moveChildRobot3BackToBeginning() {
 	ChildRobot3_element.style.left = '105%'
-	setTimeout(ChildRobot3TakeOneStep, child_step_time+child_time_between_steps);
+	setTimeout(ChildRobot3TakeOneStep, (child_step_time+child_time_between_steps)/robot3_time_multiplier);
 }
 
 function ChildRobot3TakeOneStep() {
-	ChildRobot3_element.style.bottom = '-3px';
+	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot3_element.style.left)) ? 105 : parseFloat(ChildRobot3_element.style.left);
-	ChildRobot3_element.style.left = `${currentLeft - child_step_size}%`; 
-	if (currentLeft < -5) {
+	ChildRobot3_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
+	if (currentLeft < -150*px_to_percent) {
 		ChildRobot3_element.style.bottom = '-500px';
-		setTimeout(moveChildRobot3BackToBeginning, step_time+time_between_steps);
+		ChildRobot3_element.style.opacity = '0';
+		setTimeout(moveChildRobot3BackToBeginning, (step_time+time_between_steps)/robot3_time_multiplier);
 	} else {
-		setTimeout(ChildRobot3TakeOneStep, child_step_time+child_time_between_steps);
+		ChildRobot3_element.style.bottom = '-4px';
+		ChildRobot3_element.style.opacity = '1';
+		setTimeout(ChildRobot3TakeOneStep, (child_step_time+child_time_between_steps)/robot3_time_multiplier);
 	}
 }
 
@@ -702,18 +719,21 @@ const ChildRobot4_element = document.querySelector('.ChildRobot4');
 
 function moveChildRobot4BackToBeginning() {
 	ChildRobot4_element.style.left = '105%'
-	setTimeout(ChildRobot4TakeOneStep, child_step_time+child_time_between_steps);
+	setTimeout(ChildRobot4TakeOneStep, (child_step_time+child_time_between_steps)/robot4_time_multiplier);
 }
 
 function ChildRobot4TakeOneStep() {
-	ChildRobot4_element.style.bottom = '-3px';
+	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot4_element.style.left)) ? 105 : parseFloat(ChildRobot4_element.style.left);
-	ChildRobot4_element.style.left = `${currentLeft - child_step_size}%`; 
-	if (currentLeft < -5) {
+	ChildRobot4_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
+	if (currentLeft < -150*px_to_percent) {
 		ChildRobot4_element.style.bottom = '-500px';
-		setTimeout(moveChildRobot4BackToBeginning, step_time+time_between_steps);
+		ChildRobot4_element.style.opacity = '0';
+		setTimeout(moveChildRobot4BackToBeginning, (step_time+time_between_steps)/robot4_time_multiplier);
 	} else {
-		setTimeout(ChildRobot4TakeOneStep, child_step_time+child_time_between_steps);
+		ChildRobot4_element.style.bottom = '-4px';
+		ChildRobot4_element.style.opacity = '1';
+		setTimeout(ChildRobot4TakeOneStep, (child_step_time+child_time_between_steps)/robot4_time_multiplier);
 	}
 }
 
@@ -723,18 +743,21 @@ const ChildRobot5_element = document.querySelector('.ChildRobot5');
 
 function moveChildRobot5BackToBeginning() {
 	ChildRobot5_element.style.left = '105%'
-	setTimeout(ChildRobot5TakeOneStep, child_step_time+child_time_between_steps);
+	setTimeout(ChildRobot5TakeOneStep, (child_step_time+child_time_between_steps)/robot5_time_multiplier);
 }
 
 function ChildRobot5TakeOneStep() {
-	ChildRobot5_element.style.bottom = '-3px';
+	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot5_element.style.left)) ? 105 : parseFloat(ChildRobot5_element.style.left);
-	ChildRobot5_element.style.left = `${currentLeft - child_step_size}%`; 
-	if (currentLeft < -5) {
+	ChildRobot5_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
+	if (currentLeft < -150*px_to_percent) {
 		ChildRobot5_element.style.bottom = '-500px';
-		setTimeout(moveChildRobot5BackToBeginning, step_time+time_between_steps);
+		ChildRobot5_element.style.opacity = '0';
+		setTimeout(moveChildRobot5BackToBeginning, (step_time+time_between_steps)/robot5_time_multiplier);
 	} else {
-		setTimeout(ChildRobot5TakeOneStep, child_step_time+child_time_between_steps);
+		ChildRobot5_element.style.bottom = '-4px';
+		ChildRobot5_element.style.opacity = '1';
+		setTimeout(ChildRobot5TakeOneStep, (child_step_time+child_time_between_steps)/robot5_time_multiplier);
 	}
 }
 
@@ -744,18 +767,21 @@ const ChildRobot6_element = document.querySelector('.ChildRobot6');
 
 function moveChildRobot6BackToBeginning() {
 	ChildRobot6_element.style.left = '105%'
-	setTimeout(ChildRobot6TakeOneStep, child_step_time+child_time_between_steps);
+	setTimeout(ChildRobot6TakeOneStep, (child_step_time+child_time_between_steps)/robot6_time_multiplier);
 }
 
 function ChildRobot6TakeOneStep() {
-	ChildRobot6_element.style.bottom = '-3px';
+	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot6_element.style.left)) ? 105 : parseFloat(ChildRobot6_element.style.left);
-	ChildRobot6_element.style.left = `${currentLeft - child_step_size}%`; 
-	if (currentLeft < -5) {
+	ChildRobot6_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
+	if (currentLeft < -150*px_to_percent) {
 		ChildRobot6_element.style.bottom = '-500px';
-		setTimeout(moveChildRobot6BackToBeginning, step_time+time_between_steps);
+		ChildRobot6_element.style.opacity = '0';
+		setTimeout(moveChildRobot6BackToBeginning, (step_time+time_between_steps)/robot6_time_multiplier);
 	} else {
-		setTimeout(ChildRobot6TakeOneStep, child_step_time+child_time_between_steps);
+		ChildRobot6_element.style.bottom = '-4px';
+		ChildRobot6_element.style.opacity = '1';
+		setTimeout(ChildRobot6TakeOneStep, (child_step_time+child_time_between_steps)/robot6_time_multiplier);
 	}
 }
 
@@ -764,21 +790,95 @@ setTimeout(ChildRobot6TakeOneStep, 7 * time_between_robots);
 const ChildRobot7_element = document.querySelector('.ChildRobot7');
 
 function moveChildRobot7BackToBeginning() {
-	ChildRobot7_element.style.bottom = '-500px';
 	ChildRobot7_element.style.left = '105%'
-	setTimeout(ChildRobot7TakeOneStep, child_step_time+child_time_between_steps);
+	setTimeout(ChildRobot7TakeOneStep, (child_step_time+child_time_between_steps)/robot7_time_multiplier);
 }
 
 function ChildRobot7TakeOneStep() {
-	ChildRobot7_element.style.bottom = '-3px';
+	const px_to_percent = 100 / window.innerWidth;
 	const currentLeft = isNaN(parseFloat(ChildRobot7_element.style.left)) ? 105 : parseFloat(ChildRobot7_element.style.left);
-	ChildRobot7_element.style.left = `${currentLeft - child_step_size}%`; 
-	if (currentLeft < -5) {
+	ChildRobot7_element.style.left = `${currentLeft - px_to_percent*child_step_size}%`; 
+	if (currentLeft < -150*px_to_percent) {
 		ChildRobot7_element.style.bottom = '-500px';
-		setTimeout(moveChildRobot7BackToBeginning, step_time+time_between_steps);
+		ChildRobot7_element.style.opacity = '0';
+		setTimeout(moveChildRobot7BackToBeginning, (step_time+time_between_steps)/robot7_time_multiplier);
 	} else {
-		setTimeout(ChildRobot7TakeOneStep, child_step_time+child_time_between_steps);
+		ChildRobot7_element.style.bottom = '-4px';
+		ChildRobot7_element.style.opacity = '1';
+		setTimeout(ChildRobot7TakeOneStep, (child_step_time+child_time_between_steps)/robot7_time_multiplier);
 	}
 }
 
 setTimeout(ChildRobot7TakeOneStep, 8 * time_between_robots);
+
+element.addEventListener('mouseenter', () => {
+	element.setSpeed(2);
+	robot0_time_multiplier = 2;
+});
+element.addEventListener('mouseleave', () => {
+	element.setSpeed(1);
+	robot0_time_multiplier = 1;
+});
+
+ChildRobot1_element.addEventListener('mouseenter', () => {
+	ChildRobot1_element.setSpeed(3);
+	robot1_time_multiplier = 2;
+});
+ChildRobot1_element.addEventListener('mouseleave', () => {
+	ChildRobot1_element.setSpeed(1.5);
+	robot1_time_multiplier = 1;
+});
+
+ChildRobot2_element.addEventListener('mouseenter', () => {
+	ChildRobot2_element.setSpeed(3);
+	robot2_time_multiplier = 2;
+});
+ChildRobot2_element.addEventListener('mouseleave', () => {
+	ChildRobot2_element.setSpeed(1.5);
+	robot2_time_multiplier = 1;
+});
+
+ChildRobot3_element.addEventListener('mouseenter', () => {
+	ChildRobot3_element.setSpeed(3);
+	robot3_time_multiplier = 2;
+});
+ChildRobot3_element.addEventListener('mouseleave', () => {
+	ChildRobot3_element.setSpeed(1.5);
+	robot3_time_multiplier = 1;
+});
+
+ChildRobot4_element.addEventListener('mouseenter', () => {
+	ChildRobot4_element.setSpeed(3);
+	robot4_time_multiplier = 2;
+});
+ChildRobot4_element.addEventListener('mouseleave', () => {
+	ChildRobot4_element.setSpeed(1.5);
+	robot4_time_multiplier = 1;
+});
+
+ChildRobot5_element.addEventListener('mouseenter', () => {
+	ChildRobot5_element.setSpeed(3);
+	robot5_time_multiplier = 2;
+});
+ChildRobot5_element.addEventListener('mouseleave', () => {
+	ChildRobot5_element.setSpeed(1.5);
+	robot5_time_multiplier = 1;
+});
+
+ChildRobot6_element.addEventListener('mouseenter', () => {
+	ChildRobot6_element.setSpeed(3);
+	robot6_time_multiplier = 2;
+});
+ChildRobot6_element.addEventListener('mouseleave', () => {
+	ChildRobot6_element.setSpeed(1.5);
+	robot6_time_multiplier = 1;
+});
+
+ChildRobot7_element.addEventListener('mouseenter', () => {
+	ChildRobot7_element.setSpeed(3);
+	robot7_time_multiplier = 2;
+});
+ChildRobot7_element.addEventListener('mouseleave', () => {
+	ChildRobot7_element.setSpeed(1.5);
+	robot7_time_multiplier = 1;
+});
