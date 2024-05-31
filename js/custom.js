@@ -607,7 +607,7 @@ const touch_element = document.querySelector('.robot-touch');
 var step_time = 500;
 var time_between_steps = 50;
 var step_size = 20;
-var time_between_robots = 2000;
+var time_between_robots = 5000;
 var child_step_time = 300;
 var child_time_between_steps = 30;
 var child_step_size = 12;
@@ -669,7 +669,7 @@ function ChildRobot1TakeOneStep() {
 	}
 }
 
-setTimeout(ChildRobot1TakeOneStep, 2 * time_between_robots);
+setTimeout(ChildRobot1TakeOneStep, time_between_robots);
 
 
 const ChildRobot2_element = document.querySelector('.ChildRobot2');
@@ -694,7 +694,7 @@ function ChildRobot2TakeOneStep() {
 	}
 }
 
-setTimeout(ChildRobot2TakeOneStep, 3 * time_between_robots);
+setTimeout(ChildRobot2TakeOneStep, 2 * time_between_robots);
 
 const ChildRobot3_element = document.querySelector('.ChildRobot3');
 
@@ -718,7 +718,7 @@ function ChildRobot3TakeOneStep() {
 	}
 }
 
-setTimeout(ChildRobot3TakeOneStep, 4 * time_between_robots);
+setTimeout(ChildRobot3TakeOneStep, 3 * time_between_robots);
 
 const ChildRobot4_element = document.querySelector('.ChildRobot4');
 
@@ -742,7 +742,7 @@ function ChildRobot4TakeOneStep() {
 	}
 }
 
-setTimeout(ChildRobot4TakeOneStep, 5 * time_between_robots);
+setTimeout(ChildRobot4TakeOneStep, 4 * time_between_robots);
 
 const ChildRobot5_element = document.querySelector('.ChildRobot5');
 
@@ -766,7 +766,7 @@ function ChildRobot5TakeOneStep() {
 	}
 }
 
-setTimeout(ChildRobot5TakeOneStep, 6 * time_between_robots);
+setTimeout(ChildRobot5TakeOneStep, 5 * time_between_robots);
 
 const ChildRobot6_element = document.querySelector('.ChildRobot6');
 
@@ -790,7 +790,7 @@ function ChildRobot6TakeOneStep() {
 	}
 }
 
-setTimeout(ChildRobot6TakeOneStep, 7 * time_between_robots);
+setTimeout(ChildRobot6TakeOneStep, 6 * time_between_robots);
 
 const ChildRobot7_element = document.querySelector('.ChildRobot7');
 
@@ -814,7 +814,7 @@ function ChildRobot7TakeOneStep() {
 	}
 }
 
-setTimeout(ChildRobot7TakeOneStep, 8 * time_between_robots);
+setTimeout(ChildRobot7TakeOneStep, 7 * time_between_robots);
 
 const impact_element = document.querySelector('.impact-jolt');
 const spark_element = document.querySelector('.impact-break');

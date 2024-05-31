@@ -278,7 +278,8 @@
 			display: none;
 		}
 		.owl-next, .owl-prev {
-			position: absolute;
+			position: absolute; 
+			scale: 1.5;
 			top: 50%;
 			transform: translateY(-50%);
 			span {
@@ -286,7 +287,8 @@
 			}
 		}
 		.owl-prev {
-			transition: .3s all ease;
+			transition: .3s all ease; 
+			scale: 1.5;
 			left: -30px;
 			&:hover {
 				left: -35px;

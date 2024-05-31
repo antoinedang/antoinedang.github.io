@@ -330,7 +330,8 @@
 		@include media-breakpoint-down(sm) {
 			display: none;
 		}
-		.owl-prev, .owl-next {
+		.owl-prev, .owl-next { 
+			scale: 1.5;
 			position: absolute;
 			top: 0;
 			span {
@@ -339,7 +340,8 @@
 				padding: 15px;
 			}
 		}
-		.owl-prev {
+		.owl-prev { 
+			scale: 1.5;
 			left: -30px;
 		}
 		.owl-next {
