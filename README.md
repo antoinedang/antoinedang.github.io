@@ -1,2 +1,2 @@
 # Resume
-[Check it out!](antoinedang.github.io)
+[Check it out!](http://antoinedang.github.io)
