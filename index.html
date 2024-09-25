@@ -24,14 +24,44 @@
   <link rel="stylesheet" href="css/style.css">
 
   <title>Antoine Dangeard Resume</title>
+  <style>
+    #backToTop {
+      position: fixed;
+      top: 20px;
+      right: 50%;
+      transform: translate(50%, 0);
+      opacity: 0; /* Hidden by default */
+      display: none; /* Hidden by default */
+      background-color: #0000004b; /* Blue color */
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000; /* Ensure it is above other content */
+      transition: opacity 0.250s ease; /* Fade effect */
+    }
+    #backToTop.visible {
+        display: block; /* Show button */
+        opacity: 1; /* Fully visible */
+    }
+    #backToTop.hidden {
+        opacity: 0; /* Fully transparent */
+    }
+    #backToTop:hover {
+        background-color: #000000a4; /* Darker blue on hover */
+    }
+  </style>
 </head>
 
 <div style="width: 100%; height: 100px; position: fixed; left: 0%; top: 100%; transform: translate(0%, -100%); z-index: 9; pointer-events: all;"></div>
 <lottie-player src="https://lottie.host/e6a0af63-4c40-4896-b178-f9acd566d4b4/AcheGtVYrc.json" background="transparent" speed="2" class="impact-break"></lottie-player>
 <lottie-player src="https://lottie.host/705dd15f-3561-499b-b960-50a853b289f0/j1MvAb8Won.json" background="transparent" speed="1.5" class="impact-jolt"></lottie-player>
 
-<lottie-player src="https://lottie.host/b718e68f-6227-43a9-9965-8d5ac1c63542/KlmKqdizZr.json" background="transparent" speed="0.5" loop autoplay style="opacity: 0.25; width: 100%; height: 200%; position: fixed; left: 0%; top: 50%; transform: translate(-50%, -50%); z-index: -1;"></lottie-player>
-<lottie-player src="https://lottie.host/b718e68f-6227-43a9-9965-8d5ac1c63542/KlmKqdizZr.json" background="transparent" speed="0.5" loop autoplay style="opacity: 0.25; width: 100%; height: 200%; position: fixed; left: 100%; top: 50%; transform: translate(-50%, -50%); z-index: -1;"></lottie-player>
+<!-- <lottie-player src="https://lottie.host/b718e68f-6227-43a9-9965-8d5ac1c63542/KlmKqdizZr.json" background="transparent" speed="0.5" loop autoplay style="opacity: 0.25; width: 100%; height: 200%; position: fixed; left: 0%; top: 50%; transform: translate(-50%, -50%); z-index: -1;"></lottie-player>
+<lottie-player src="https://lottie.host/b718e68f-6227-43a9-9965-8d5ac1c63542/KlmKqdizZr.json" background="transparent" speed="0.5" loop autoplay style="opacity: 0.25; width: 100%; height: 200%; position: fixed; left: 100%; top: 50%; transform: translate(-50%, -50%); z-index: -1;"></lottie-player> -->
 
 <lottie-player src="https://lottie.host/d0ea3775-0acd-4ce4-93e7-732509e53406/BM8WF2RhLC.json" background="transparent" speed="1" loop autoplay class="robot-touch"></lottie-player>
 
@@ -48,6 +78,37 @@
 
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="100">
+  <button id="backToTop">Back to Top</button>
+  
+  <script>
+    // Get the button
+    var backToTopButton = document.getElementById("backToTop");
+
+    // Show the button when scrolling down
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          if (backToTopButton.classList.contains("visible")) return; // Already visible
+            backToTopButton.classList.add("visible"); // Show button
+            setTimeout(function() {
+                backToTopButton.classList.remove("hidden"); // Hide after fading out
+            }, 250); // Match this duration to the CSS transition duration
+        } else {
+          if (backToTopButton.classList.contains("hidden")) return; // Already visible
+            backToTopButton.classList.add("hidden"); // Fade out
+            setTimeout(function() {
+                backToTopButton.classList.remove("visible"); // Hide after fading out
+            }, 250); // Match this duration to the CSS transition duration
+        }
+    };
+
+    // Scroll to the top when the button is clicked
+    backToTopButton.onclick = function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Smooth scrolling
+        });
+    };
+  </script>
   <!-- <div class="lines-wrap">
     <div class="lines-inner">
       <div class="lines"></div>
@@ -72,10 +133,9 @@
 
         <ul class="js-clone-nav d-none d-lg-inline-none site-menu float-right site-nav-wrap">
           <li><a href="#about-section" class="nav-link active">About Me</a></li>
-          <li><a href="#experience-section" class="nav-link">Professional Experience</a></li>
-          <li><a href="#projects-section" class="nav-link">Robotics</a></li>
           <li><a href="#skills-section" class="nav-link">Skills</a></li>
-          <li><a href="#awards-section" class="nav-link">Activities and Awards</a></li>
+          <li><a href="#resume-pdf" class="nav-link">Resume</a></li>
+          <li><a href="#cv-pdf" class="nav-link">Academic C.V.</a></li>
           <li><a href="#contact-section" class="nav-link">Contact</a></li>
         </ul>
 
@@ -124,7 +184,7 @@
 
             <p class="text-black gsap-reveal-hero">I am an undergraduate student at McGill University, in the final stretch of a BEng in Software Engineering and a minor in Applied Artificial Intelligence, <strong>aiming to graduate in May 2025.</strong></p>
             <br>
-            <p class="text-black gsap-reveal-hero">During my time at McGill, I've discovered that I love everything robotics and machine learning. Specifically, I have found I am particularly fascinated with solving problems in state estimation, control, and perception through machine learning.</p>
+            <p class="text-black gsap-reveal-hero">During my time at McGill, I've discovered that I love everything robotics and machine learning. Specifically, I have found I am particularly fascinated with solving problems in state estimation, control, and perception for autonomous mobile robots in difficult environments.</p>
             <br>
             <p class="text-black gsap-reveal-hero">My academic background to date has given me the tools needed to create meaningful software solutions, but most of my skills have come "unofficially". Since the age of nine, when I taught myself to code, my curiosity has led me to work on passion projects ranging from video games to machine learning models, trading bots, hackathons, robots, clubs, or websites like the one you're reading.</p>
             <br>
@@ -136,236 +196,7 @@
     </div>
 
     
-    <div class="major-section testimonial-wrap" id="experience-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-lg-7 text-center mx-auto">
-            <h2 class="section-heading gsap-reveal-hero mb-0"><strong>Professional Experience</strong></h2>
-
-            <div class="wave gsap-reveal-hero" >
-              <svg>
-                <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-
-        <div data-aos="fade-left" data-aos-delay="200">
-
-          <div class="owl-carousel owl-3-slider">
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/mcgill_nlp.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>Research Assistant @ <a href="https://mcgill-nlp.github.io/" target="_blank">McGill NLP Lab</a></h3>
-                  <span class="caption">August 2024 - Present</span>
-                  <br>
-                  <span class="caption" style="font-size: 10px;"><i>Python, NumPy, PyTorch, BERT</i></span>
-                </div>
-                <blockquote>
-                  <p>Working directly with Ines Arous, Ph.D, under Prof. Jackie Cheung, on the continuation of the TaxoComplete (Self-Supervised Taxonomy Completion) paper. Optimized taxonomy prediction function from 45 minute runtime down to 2 minutes. More TBD.</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/torc.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>H.i.L. Software Engineer Intern @ <a href="https://torc.ai/" target="_blank">Torc Robotics</a></h3>
-                  <span class="caption">May 2024 - August 2024</span>
-                  <br>
-                  <span class="caption" style="font-size: 10px;"><i>Unix, Bash, Python, Docker, Unix, Agile, GitHub, AWS</i></span>
-                </div>
-                <blockquote>
-                  <p>Researched, designed and implemented data injection infrastructure for HiL (Hardware-in-the-loop) test benches. Design supported manual and automatic (CI/CD) testing of ROS components with MCAPs. Created ROS2 MCAP replay and recording tool from scratch in C++ with Python bindings. Enabled developers to replay and record any ROS2 messages without requiring prior knowledge of custom ROS message types. Simplified testing procedure from requiring custom ROS2 builds and about 15-20 commands to a single docker container and under 5 commands</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/vention.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>Software Engineer Intern in Robotics @ <a href="https://vention.io/fr" target="_blank">Vention</a></h3>
-                  <span class="caption">May - August 2023</span>
-                  <br>
-                  <span class="caption" style="font-size: 10px;"><i>React.js, ROS, C++, Python, Docker, Agile, GitHub</i></span>
-                </div>
-                <blockquote>
-                  <p>Optimized joint speed limiting during Cartesian linear movements of 6-DOF robotic arms, resulting in increased maximum speed of linear movements and improved UX. Added UI in the CAD to view and modify end-of-arm tool center point offsets. Implemented self-collision checking for end-of-arm tools. Built connection status detection and corresponding UI for UR arms. Wrote scripts for automatic robot configuration upon startup and development utilities.</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-
-            <!-- <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/mcgill_robotics.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>Software Team Lead @ <a href="https://mcgillrobotics.com/" target="_blank">McGill Robotics</a></h3>
-                  <span class="caption">May 2023 - Present</span>
-                  <br>
-                  <span class="caption" style="font-size: 12px;">(Team Member September 2022 - May 2023)</span>
-                  <br>
-                  <span class="caption" style="font-size: 10px;"><i>ROS, Python, OpenCV, Numpy, C++, Agile, GitHub, Arduino</i></span>
-                </div>
-                <blockquote>
-                  <p>Software team lead for an autonomous underwater vehicle to compete at <a href="https://robosub.org/programs/2023/" target="_blank">RoboSub</a>. Trained new members, implemented mandatory code reviews, Agile workflow, issue tracking, documentation upkeep, and integration testing pipelines. Built packages for object detection and mapping, image processing, high-level decision-making framework, and improved software architecture. Helped with state estimation, pose control, and Gazebo simulation</p>
-                </blockquote>
-              </div>
-            </div>
-
-              <div class="item">
-                <div class="testimonial-v1">
-                  <img src="images/prometheus.png" alt="Image" class="img-fluid">
-                  <div class="mb-4">
-                    <h3>Research Assistant @ <a href="https://www.cs.mcgill.ca/~jvybihal/index.php?Page=Research" target="_blank">Prometheus A.I. Lab</a></h3>
-                    <span class="caption">September 2023 - Present</span>
-                    <br>
-                    <span class="caption" style="font-size: 10px;"><i>Python, Java, TCP, WebSocket, GitLab</i></span>
-                  </div>
-                  <blockquote>
-                    <p>Worked under <a href="https://www.cs.mcgill.ca/~jvybihal/index.php?Page=About" target="_blank">Prof. J. Vybihal</a>, took over design and implementation of server infrastructure using WebSocket and TCP for inter-robot communication. Aim to demonstrate server's ability to communicate with and send commands to several different groups of robots simultaneously by December 2023.</p>
-                  </blockquote>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="testimonial-v1">
-                  <img src="images/mcgill.png" alt="Image" class="img-fluid">
-                  <div class="mb-4">
-                    <h3>Founding Software Engineer @ MADS</h3>
-                    <span class="caption">May - August 2023</span>
-                    <br>
-                    <span class="caption" style="font-size: 10px;"><i>ROS, Python, A*, GitLab, Raspberry Pi</i></span>
-                  </div>
-                  <blockquote>
-                    <p>Founding member of student-led startup venture in autonomous multi-agent robotics. Built software for navigation with A*, server/client communication with TCP protocol, drive controller using inverse kinematics, and rule-based heuristic decision-making. Granted $7500 TechAccel Summer Stipend from <a href="https://www.mcgill.ca/engine/funding-programs/students/techaccel-program" target="_blank">McGill Engine</a>.</p>
-                  </blockquote>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="testimonial-v1">
-                  <img src="images/the cube.png" alt="Image" class="img-fluid">
-                  <div class="mb-4">
-                    <h3>Cube Technician @ <a href="https://the-cube-eus.myshopify.com/" target="_blank">The Cube</a></h3>
-                    <span class="caption">September 2023 - Present</span>
-                    <br>
-                    <span class="caption" style="font-size: 10px;"><i>CAD, 3D printing, Customer Service</i></span>
-                  </div>
-                  <blockquote>
-                    <p>Service technician for <a href="https://the-cube-eus.myshopify.com/" target="_blank">The Cube</a>'s 3D printing service: involves evaluating print viability, repairing printers, conversing with clients, executing prints, and logging orders.</p>
-                  </blockquote>
-                </div>
-              </div> -->
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
   <div class="untree_co-section untree_co-section-4 pb-0"  id="projects-section">
-    <div class="container">
-
-      <div class="col-lg-7 text-center mx-auto">
-        <h2 class="section-heading gsap-reveal-hero mb-0"><strong>Robotics</strong></h2>
-        <p class="gsap-reveal-hero"><em>More projects <a href="https://github.com/antoinedang" target="_blank">here</a> and <a href="https://drive.google.com/drive/folders/1JA5dZMWGUjJqDh3js6mmg_Exa6D2m3Wc" target="_blank">here</a></em>.</p>
-        <div class="wave gsap-reveal-hero" >
-          <svg>
-            <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
-          </svg>
-        </div>
-      </div>
-
-      <div class="relative"><div class="loader-portfolio-wrap"><div class="loader-portfolio"></div></div> </div>
-      <div id="portfolio-single-holder"></div>
-
-      <div class="portfolio-wrapper">
-
-        <div id="posts" class="row">
-
-          <div class="item web branding col-sm-12 col-md-6 col-lg-6 isotope-mb-2">
-            <a href="https://mcgillhumanoid.github.io/" class="portfolio-item isotope-item gsap-reveal-img" data-id="1"  target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-link2"></span>
-                <!-- <lottie-player src="https://lottie.host/8d309f26-cf06-4877-a773-370bb833e72c/xz2rK7qqAt.json" background="transparent" speed="1"  style="width: 100%; height: 100%; position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%);" loop autoplay></lottie-player> -->
-                <!-- <lottie-player src="https://lottie.host/8d309f26-cf06-4877-a773-370bb833e72c/xz2rK7qqAt.json" background="transparent" speed="1"  style="width: 100%; height: 100%; position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);" loop autoplay></lottie-player> -->
-                <div class="portfolio-item-content">
-                  <h5 style="color: white;"><strong>P.M. and Software Lead @ McGill Humanoid</strong></h5>
-                  <h6 style="color: white; font-size: 14px;">Founded a humanoid robot-based design team. Currently acting as the Project Manager and Software Lead, overseeing a team of 10 inter-disciplinary undergraduate engineers with supervision from Prof. J Vybihal. As of January 2024, integrated into the Prometheus A.I. Lab with Prof. Vybihal, and as of August 2024 over 10,000$ in value has been raised. The project aims to enable experienced students to apply their skills to much more complex problems than are currently available in the undergraduate curriculum, and gain experience which makes them more competitive for academic or industry SOTA robotics.</h6>
-                  <h6>-</h6>
-                  <p>ROS - Python - MuJoCo/Unity - R.L.</p>
-                </div>
-              </div>
-              <img src="images/humanoid.png" class="lazyload img-fluid" alt="Images" />
-            </a>
-          </div>
-
-
-          <div class="item web branding col-sm-12 col-md-6 col-lg-6 isotope-mb-2">
-            <a href="https://www.cs.mcgill.ca/~jvybihal/index.php?Page=Research" class="portfolio-item  isotope-item gsap-reveal-img" data-id="1" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-link2"></span>
-                <div class="portfolio-item-content">
-                  <h5 style="color: white;"><strong>Research Volunteer @ Prometheus A.I. Lab.</strong></h5>
-                  <h6 style="color: white; font-size: 12px;"><strong><em>Dec. 2023 - Present:</em></strong> Advisor for new students joining the lab, offering mentorship and technical assistance to several teams. Also lead the Humanoid project in the lab, providing students with research opportunities on the Humanoid.</h6>
-                  <h6 style="color: white; font-size: 12px;"><strong><em>Sep. - Dec. 2023:</em></strong> Re-designed server for multi-agent inter-robot communication. Reduced lines of code from over 5000 to less than 300 whilst preserving functionality and improving maintainability and compatibility with robot hardware.</h6>
-                  <h6 style="color: white; font-size: 12px;"><strong><em>May. - Sep. 2023:</em></strong> Technical lead for multi-agent robotic delivery project. Obtained $7500 TechAccel Summer Stipend from McGill Engine. Implemented control, mapping, and planning for vehicle.</h6>
-                  <h6>-</h6>
-                  <p>Python - Path Planning - Networking</p>
-                </div>
-              </div>
-              <img src="images/car.jpg" class="lazyload  img-fluid" alt="Images" />
-            </a>
-          </div>
-
-
-
-
-          <div class="item web branding col-sm-12 col-md-6 col-lg-6 isotope-mb-2">
-            <a href="https://www.mcgill.ca/engineeringdesign/design-teams/mcgill-robotics" class="portfolio-item isotope-item gsap-reveal-img" data-id="1" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-link2"></span>
-                <div class="portfolio-item-content">
-                  <h5 style="color: white;"><strong>Software Team Lead @ McGill Robotics AUV</strong></h5>
-                  <h6 style="color: white; font-size: 14px;">Created tutorials, an onboarding plan, and thorough documentation for new members; more than doubling retention rate from previous years. Implemented mandatory code reviews, issue tracking, scheduled documentation upkeep, and automatic integration testing pipelines, successfully preventing any major code breakages throughout the year. Build new simulation from scratch with improved performance, more Q.o.L. features, and better sim-to-real than previous framework. Assisted members with state estimation, pose control, computer vision, and simulation</h6>
-                  <h6>-</h6>
-                  <p>Management - DevOps - Software Design</p>
-                </div>
-              </div>
-              <img src="images/auv_lead.png" class="lazyload  img-fluid" alt="Images" />
-            </a>
-          </div>
-
-          
-          <div class="item web branding col-sm-12 col-md-6 col-lg-6 isotope-mb-2">
-            <a href="https://github.com/mcgill-robotics/AUV-2024" class="portfolio-item isotope-item gsap-reveal-img" data-id="1" target="_blank">
-              <div class="overlay">
-                <span class="wrap-icon icon-link2"></span>
-                <div class="portfolio-item-content">
-                  <h5 style="color: white;"><strong>Software Member @ McGill Robotics AUV</strong></h5>
-                  <h6 style="color: white; font-size: 14px;">Built object detection, mapping, and autonomous planner from scratch, enabling the team to reach semi-finals for the first time since 2020.</h6>
-                  <h6>-</h6>
-                  <p>ROS - Python - OpenCV - YOLO - Numpy</p>
-                </div>
-              </div>
-              <img src="images/auv_vision.png" class="lazyload  img-fluid" alt="Images" />
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-
-        <!-- </div>
-        </div> -->
-      </div>
-    </div>
 
 
     <div class="major-section pb-0" id="skills-section">
@@ -446,13 +277,11 @@
       </div>
     </div>
     
-
-    <div class="major-section testimonial-wrap" id="awards-section">
+    <div class="major-section pb-0" id="resume-pdf">
       <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-4">
           <div class="col-lg-7 text-center mx-auto">
-            <h2 class="section-heading gsap-reveal-hero mb-0"><strong>Activities and Awards</strong></h2>
-
+            <h2 class="section-heading gsap-reveal-hero mb-0"><strong>Resume</strong></h2>
             <div class="wave gsap-reveal-hero" >
               <svg>
                 <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
@@ -460,144 +289,36 @@
             </div>
           </div>
         </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <object data="Formal_Resume.pdf" type="application/pdf" width="100%" height="800px" style="border: 2px solid #000000; border-radius: 20px;"> <!--  height="1190px" -->
+            <p>Your browser does not support PDFs.</p>
+          </object>
+        </div>
 
+      </div>
+      
+    </div>
 
-        <div data-aos="fade-left" data-aos-delay="200">
-
-
-
-
-          <div class="item">
-            <div class="testimonial-v1">
-              <img src="images/the cube.png" alt="Image" class="img-fluid">
-              <div class="mb-4">
-                <h3>Cube Technician @ <a href="https://the-cube-eus.myshopify.com/" target="_blank">The Cube</a></h3>
-                <span class="caption">September 2023 - January 2024</span>
-              </div>
-              <blockquote>
-                <p>Service technician for <a href="https://the-cube-eus.myshopify.com/" target="_blank">The Cube</a>'s 3D printing service: involves evaluating print viability, repairing printers, conversing with clients, executing prints, and logging orders.</p>
-              </blockquote>
+    <div class="major-section pb-0" id="cv-pdf">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-7 text-center mx-auto">
+            <h2 class="section-heading gsap-reveal-hero mb-0"><strong>Academic CV</strong></h2>
+            <div class="wave gsap-reveal-hero" >
+              <svg>
+                <path d="M10,10 L50,100 L90,50" stroke="#0389ff"></path>
+              </svg>
             </div>
           </div>
-          <!-- END .item -->
-
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/mcgill.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3><a href="https://www.mcgill.ca/tpulse/tomlinson-engagement-award-mentoring-team">Tomlinson Engagement Award for Mentoring</a></h3>
-                  <span class="caption">December 2023</span>
-                </div>
-                <blockquote>
-                  <p>Earned through mentorship in MECH 360 (Principles of Manufacturing). As McGill describes, the award applies to "quality students from a very recent offering of the class or laboratory who have a marked interest in teaching/learning and educational improvement".</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-            
-
-            
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/maishacks.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>2<sup>nd</sup> Place <a href="https://maishacks.com/" target="_blank">McGill A.I. Society Hackathon</a></h3>
-                  <span class="caption">September 2023</span>
-                </div>
-                <blockquote>
-                  <p>An RNN-powered melody and drums generation website, built in the context of the 24-hour <a href="https://mcgillai.com/" target="_blank">McGill AI Society</a> Hackathon. Assembled and cleaned datasets, wrote the code for training models and generating music and drums, build the back-end and helped with front-end integration. Powered by Google's <a href="https://magenta.tensorflow.org/" target="_blank">Magenta</a> models, Flask and Javascript.</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-            
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/robosub.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>Semi-Finalist at <a href="https://robosub.org/programs/2023/" target="_blank">RoboSub</a> with <a href="https://mcgillrobotics.com/" target="_blank">McGill Robotics</a></h3>
-                  <span class="caption">August 2023</span>
-                </div>
-                <blockquote>
-                  <p>Competed with <a href="https://mcgillrobotics.com/" target="_blank">McGill Robotics</a>' AUV in <a href="https://robosub.org/programs/2023/" target="_blank">RoboSub 2023</a>, and made it to the semi-finalist pool. I joined the team in September 2022 and built the computer vision, propulsion, and planning (decision-making) packages which were used at competition. I also helped with the implementation of a quaternion-based orientation PID, simulation, and state estimation.</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-
-
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/sports.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>Intramural Team Captain</h3>
-                  <span class="caption">January - May 2023</span>
-                </div>
-                <blockquote>
-                  <p>Participated in dodge-ball intramural tournament at McGill. Reached semi-finals before elimination.</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/mcgill_robotics.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>1<sup>st</sup> Place <a href="https://mcgillrobotics.com/robohacks" target="_blank">RoboHacks</a></h3>
-                  <span class="caption">March 2023</span>
-                </div>
-                <blockquote>
-                  <p>Won the first place prize for the advanced "Vision" challenge at <a href="https://mcgillrobotics.com/robohacks" target="_blank">RoboHacks 2023</a>. The 24-hour challenge involved building a water-bottle based underwater robot, controlling it's buoyancy using a motor and syringe, building ailerons to enable forward movement, and using a camera and arduino computer to produce a 2D visualization of colored regions on the bottom of the pool.</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/mchacks.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>Top 5 of 115 at <a href="https://mchacks10.devpost.com/" target="_blank">McHacks 10</a></h3>
-                  <span class="caption">January 2023</span>
-                </div>
-                <blockquote>
-                  <p>Used object detection and color theory/fashion trends to evaluate the objective "quality" of a person's outfit from an image, then gave customized feedback to the user. Built in 48 hours using a <a href="https://www.ultralytics.com/yolo" target="_blank">YOLO</a> object detection model to identify individual articles of clothing, OpenCV to extract the features of each item of clothing, and JavaScript and Flask for the website.</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/mdn.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>Top 10 in McGill Open Data Challenge</h3>
-                  <span class="caption">January 2023</span>
-                </div>
-                <blockquote>
-                  <p>Achieved Top 10 lowest mean squared errors for an open data challenge aiming to predict university acceptance from data points like SAT scores, extra-curriculars, etc. Set up and trained a Ridge regression model with stochastic gradient descent in 48 hours (I unfortunately heard about the challenge just before the deadline).</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-
-            <div class="item">
-              <div class="testimonial-v1">
-                <img src="images/iter.png" alt="Image" class="img-fluid">
-                <div class="mb-4">
-                  <h3>2<sup>nd</sup> and 3<sup>rd</sup> place at <a href="https://www.iter.org/newsline/-/2729" target="_blank">ITER Robotics Competition</a></h3>
-                  <span class="caption">2017</span>
-                </div>
-                <blockquote>
-                  <p>Participated in robotics competition for middle and high schoolers. Helped code and build the Lego Mindstorm-based robot. Our team won 2<sup>nd</sup> place in the 'WAYS' challenge and 3<sup>rd</sup> in the 'TRANSPORT' challenge.</p>
-                </blockquote>
-              </div>
-            </div>
-            <!-- END .item -->
-
         </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <object data="Academic_CV.pdf" type="application/pdf" width="100%" height="800px" style="border: 2px solid #000000; border-radius: 20px;"> <!--  height="1190px" -->
+            <p>Your browser does not support PDFs.</p>
+          </object>
+        </div>
+
       </div>
+      
     </div>
 
     <div class="major-section" id="contact-section">
